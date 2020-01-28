@@ -125,40 +125,11 @@ const pieBuilder = (monkeybuttArray) => {
 printToDom('pie-cards', domString);
 };
 
-const zoePie = () => {
+const selfPie = (e) => {
+    const buttonId = e.target.id;
     const myPies = []
         for (let i = 0; i < pies.length; i++){
-            if( pies[i].instructor === 'Zoe'){
-                myPies.push(pies[i]);
-            }
-        }
-    pieBuilder(myPies);
-};
-
-const maryPie = () => {
-    const myPies = []
-        for (let i = 0; i < pies.length; i++){
-            if( pies[i].instructor === 'Mary'){
-                myPies.push(pies[i]);
-            }
-        }
-    pieBuilder(myPies);
-};
-
-const lukePie = () => {
-    const myPies = []
-        for (let i = 0; i < pies.length; i++){
-            if( pies[i].instructor === 'Luke'){
-                myPies.push(pies[i]);
-            }
-        }
-    pieBuilder(myPies);
-};
-
-const selfPie = () => {
-    const myPies = []
-        for (let i = 0; i < pies.length; i++){
-            if( pies[i].instructor === 'Self'){
+            if( pies[i].instructor === buttonId){
                 myPies.push(pies[i]);
             }
         }
@@ -175,8 +146,8 @@ const allPie = () => {
 
 pieBuilder(pies);
 
-document.getElementById('Zoe').addEventListener('click', zoePie);
-document.getElementById('Mary').addEventListener('click', maryPie);
-document.getElementById('Luke').addEventListener('click', lukePie);
+document.getElementById('Zoe').addEventListener('click', selfPie);
+document.getElementById('Mary').addEventListener('click', selfPie);
+document.getElementById('Luke').addEventListener('click', selfPie);
 document.getElementById('Self').addEventListener('click', selfPie);
 document.getElementById('All').addEventListener('click', allPie);
