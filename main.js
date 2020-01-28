@@ -140,18 +140,17 @@ const selfPie = (e) => {
     }
 };
 
-//const allPie = () => {
-    //const myPies = []
-        //for (let i = 0; i < pies.length; i++){
-           // myPies.push(pies[i]);
-       // }
-    //pieBuilder(myPies);
-//};
+const event = () => {
+    document.getElementById('Zoe').addEventListener('click', selfPie);
+    document.getElementById('Mary').addEventListener('click', selfPie);
+    document.getElementById('Luke').addEventListener('click', selfPie);
+    document.getElementById('Self').addEventListener('click', selfPie);
+    document.getElementById('All').addEventListener('click', selfPie);
+};
 
-pieBuilder(pies);
+const init = () => {
+    pieBuilder(pies);
+    event();
+};
 
-document.getElementById('Zoe').addEventListener('click', selfPie);
-document.getElementById('Mary').addEventListener('click', selfPie);
-document.getElementById('Luke').addEventListener('click', selfPie);
-document.getElementById('Self').addEventListener('click', selfPie);
-document.getElementById('All').addEventListener('click', selfPie);
+init();
