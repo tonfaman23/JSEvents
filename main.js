@@ -127,6 +127,9 @@ printToDom('pie-cards', domString);
 
 const selfPie = (e) => {
     const buttonId = e.target.id;
+    if(buttonId === 'All'){
+        pieBuilder(pies);
+    } else{
     const myPies = []
         for (let i = 0; i < pies.length; i++){
             if( pies[i].instructor === buttonId){
@@ -134,15 +137,16 @@ const selfPie = (e) => {
             }
         }
     pieBuilder(myPies);
+    }
 };
 
-const allPie = () => {
-    const myPies = []
-        for (let i = 0; i < pies.length; i++){
-            myPies.push(pies[i]);
-        }
-    pieBuilder(myPies);
-};
+//const allPie = () => {
+    //const myPies = []
+        //for (let i = 0; i < pies.length; i++){
+           // myPies.push(pies[i]);
+       // }
+    //pieBuilder(myPies);
+//};
 
 pieBuilder(pies);
 
@@ -150,4 +154,4 @@ document.getElementById('Zoe').addEventListener('click', selfPie);
 document.getElementById('Mary').addEventListener('click', selfPie);
 document.getElementById('Luke').addEventListener('click', selfPie);
 document.getElementById('Self').addEventListener('click', selfPie);
-document.getElementById('All').addEventListener('click', allPie);
+document.getElementById('All').addEventListener('click', selfPie);
